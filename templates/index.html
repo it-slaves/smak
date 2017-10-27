@@ -1,0 +1,276 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>СМЭК</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="../../dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="{% static '/polls/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="{% static '/polls/css/landing.css' %}" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!-- <script src="../../assets/js/ie-emulation-modes-warning.js"></script> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="glyphicon glyphicon-menu-hamburger white"></span>
+          </button>
+          <!-- <a class="navbar-brand" href="/">СМЭК</a> -->
+          <a class="navbar-brand" href="/"><img src="{% static '/polls/images/logo.png' %}" alt="Смэк" width="80" height="25"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about0">О продукте</a></li>
+            <li><a href="#about1"> Зачем это нужно?</a></li>
+            <li><a href="#about2">Как это работает?</a></li>
+            <li><a href="#price">Стоимость</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#call">Заказать звонок<span class="sr-only">(current)</span></a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Войти / Регистрация</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+      <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron jumbotron-main">
+        <div class="container">
+            <div class ="col-lg-8">
+                <h1>СМЭК</h1>
+                <h2>Образование как совместный труд<h2>
+                <a href="#call" class="btn btn-lg btn-danger btn-orange">Заказать</a>
+            </div>
+            <div class="col-lg-4 photo visible-lg">
+                <img width="450" height="450" src="{% static '/polls/images/photo.png' %}" alt="photo"/>
+            </div>
+        </div>
+    </div>
+
+    <a id="about0"></a>
+    <div class="container marketing">
+
+      <h2 class="sub-header">О продукте</h2>
+
+    <!-- About -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="{% static 'polls/images/social-network.png' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Социологическое исследование</h2>
+          <p>Наша команда проводит широкое исследование предпочтений учеников, их вовлеченности в образовательный процесс, удовлетворенности обучением и многое другое.</p>
+          <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="{% static 'polls/images/piechart.png' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Экспертная аналитика полученных данных</h2>
+          <p>Исходя из полученных данных, наши эксперты оценят впечатление учеников по каждой дисциплине, что позволит не только выявлять предпочтения обучающихся, но и облегчит принятие управленческих решений.</p>
+          <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="{% static 'polls/images/locked-data.png' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Гарантия безопасности данных</h2>
+          <p>Мы обеспечиваем полную сохранность собираемых данных. Список получателей результатов исследований утверждается напрямую руководством образовательного учреждения.</p>
+          <!-- <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p> -->
+        </div><!-- /.col-lg-4 -->
+        <a id="about1"></a>
+      </div>
+
+      <!-- <a id="about1"></a> -->
+      <h2 class="sub-header">Зачем проводить исследование в школах?</h2>
+
+      <div class="row featurette">
+          <div class="col-lg-2 col-lg-push-1">
+            <h1>1</h1>
+          </div>
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="featurette-block">
+                <h4 class="featurette-heading">Социология как инструмент руководителя</h2>
+                <p>Социологические исследования позволяют руководству школы получить наиболее полную информацию о том, как видят образовательный процесс ученики. Исходя из собранных данных, руководство школы сможет предположить, какие предметы пользуются наибольшей популярностью, и как это в дальнейшем отражается на траектории поступления учеников, а также какую помощь можно оказать молодым преподавателям для совершенствования их профессиональных навыков.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row featurette">
+          <div class="col-lg-2 col-lg-push-1">
+            <h1>2</h1>
+          </div>
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="featurette-block">
+                <h4 class="featurette-heading">Индивидуальный подход</h2>
+                <p>На основе данных, полученных в ходе исследования, руководство школы может давать более точные рекомендации при выборе учениками класса с углубленным обучением на основе его личных предпочтений, успеваемости и сил, затраченных на освоение того или иного предмета.</p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row featurette">
+          <div class="col-lg-2 col-lg-push-1">
+            <h1>3</h1>
+          </div>
+        <div class="col-lg-8 col-lg-push-2">
+            <div class="featurette-block">
+                <h4 class="featurette-heading">Социология как индикатор</h2>
+                <p>Глубокая аналитика предпочтений учеников позволяет определить основные проблемные зоны образовательного процесса. К примеру, руководство школы после проведенного исследования сможет определить, почему некоторые ученики предпочитают помощь репетиторов при подготовке к экзаменам, нежели помощь учителей в своей школе.</p>
+            </div>
+        </div>
+        <a id="about2"></a>
+      </div>
+
+      <!-- <a id="about2"></a> -->
+      <h2 class="sub-header">Как это работает?</h2>
+
+      <div class="row">
+          <div class="col-lg-1 col-lg-offset-1">
+              <img class="center-block" src="{% static 'polls/images/checked-files.png' %}" alt="Generic placeholder image" width="80" height="80">
+          </div>
+          <div class="col-lg-2">
+              <img class="center-block" src="{% static 'polls/images/right-arrow.png' %}" alt="Generic placeholder image" width="70" height="70">
+          </div>
+          <div class="col-lg-1">
+              <img class ="center-block" src="{% static 'polls/images/user-database.png' %}" alt="Generic placeholder image" width="80" height="80">
+          </div>
+          <div class="col-lg-2">
+              <img class ="center-block" src="{% static 'polls/images/right-arrow.png' %}" alt="Generic placeholder image" width="70" height="70">
+          </div>
+          <div class="col-lg-1">
+              <img class ="center-block" src="{% static 'polls/images/search-analytics.png' %}" alt="Generic placeholder image" width="80" height="80">
+          </div>
+          <div class="col-lg-2">
+              <img class ="center-block" src="{% static 'polls/images/right-arrow.png' %}" alt="Generic placeholder image" width="70" height="70">
+          </div>
+          <div class="col-lg-1">
+              <img class ="center-block" src="{% static 'polls/images/interface.png' %}" alt="Generic placeholder image" width="80" height="80">
+          </div>
+      </div>
+
+      <div class="row" style="margin-top: 60px; margin-bottom: 30px;">
+          <div class="col-lg-3">
+
+              <p>Согласуем базу вопросов и категорий обучающихся с руководством школы.</p>
+          </div>
+          <div class="col-lg-3">
+              <p>Проводим социологическое исследование в вашей школе.</p>
+          </div>
+          <div class="col-lg-3">
+              <p>Анализируем полученные данные, подготавливаем выводы и рекомендации.</p>
+          </div>
+          <div class="col-lg-3">
+              <p>Передаем отчет о проведенном исследовании заказчику.</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-8 col-lg-push-2">
+            <p>Наша работа нацелена на долгосрочное улучшение качества обучения в школах, а поэтому при заказе исследований на год мы также оцениваем динамику изменений в вашей школе.</p>
+          </div>
+          <a id="price"></a>
+      </div>
+
+      <!-- <a id="price"></a> -->
+      <h2 class="sub-header">Стоимость</h2>
+
+      <div class="row">
+          <div class="col-lg-4">
+              <div class="price grey">
+                  <h4 class="price-heading">Экспресс-оценка</h4>
+                  <ul>
+                    <li><i class="glyphicon glyphicon-ok"></i> Проведение единоразового социологического исследования в школе по согласованной категории учеников</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Аналитика предпочтений, удовлетворенности и вовлеченности в образовательный процесс по каждой дисциплине</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Формирование сводного отчета для руководства школы</li>
+                  </ul>
+                  <h3 class="price-heading absolute-price">
+                      20 000
+                  </h3>
+                  <div class="green-container">
+                      <a href="#call" class="btn btn-lg btn-default btn-green">Заказать</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="price grey">
+                  <h4 class="price-heading">Оценка полугодия</h4>
+                  <ul>
+                    <li><i class="glyphicon glyphicon-ok"></i> Проведение единоразового социологического исследования два раза за полугодие в школе по согласованной категории учеников</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Аналитика предпочтений, удовлетворенности и вовлеченности в образовательный процесс по каждой дисциплине</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Выявление первичных трендов и оценка краткосрочной динамики обучения</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Формирование сводного отчета для руководства школы</li>
+                  </ul>
+                  <h3 class="price-heading absolute-price">
+                      35 000
+                  </h3>
+                  <div class="green-container">
+                      <a href="#call" class="btn btn-lg btn-default btn-green">Заказать</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4">
+              <div class="price green">
+                  <h4 class="price-heading">Годовая оценка</h4>
+                  <ul>
+                    <li><i class="glyphicon glyphicon-ok"></i> Проведение единоразового социологического исследования 4 раза в год в школе по согласованной категории учеников</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Аналитика предпочтений, удовлетворенности и вовлеченности в образовательный процесс по каждой дисциплине</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Выявление общих трендов и динамики обучения в среднесрочной перспективе</li>
+                    <li><i class="glyphicon glyphicon-ok"></i> Формирование сводного отчета для руководства школы</li>
+                  </ul>
+                  <h3 class="price-heading absolute-price" style="color: white">
+                      65 000
+                  </h3>
+                  <div class="green-container">
+                    <a href="#call" class="btn btn-lg btn-danger btn-orange">Заказать</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <a id="call"></a>
+      <h2 class="sub-header">Закажите обратный звонок</h2>
+
+      <p style="text-align: center">Для того, чтобы узнать больше, вы можете позвонить нам или заказать обратный звонок</p>
+      <p class="number">+7 (987) 654-32-10</p>
+
+      <div class="row">
+      <div class="col-lg-offset-4 col-lg-4">
+          <input type="text" class="form-control" id="phone" placeholder="Ваш номер телефона" name="phone">
+      </div>
+      </div>
+      <center><a hrf="#" class="btn btn-lg btn-default btn-green">Заказать звонок</a></center>
+
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="{% static 'polls/js/bootstrap.min.js' %}"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  </body>
+</html>

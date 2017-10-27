@@ -1,0 +1,17 @@
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'polls/css/style.css' %}" />
+        {% block head %}
+            <title>Base</title>
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">   
+            {% block body %}
+            <h1>Base</h1>
+            {% endblock %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Login</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="jumbotron">
+<h1 >Welcome!</h1>
+<p>
+	Login here
+</p>
+</div>
+<h2>Login</h2>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button class="btn btn-default" type="submit">Login</button>
+</form>
+
+{% endblock %}
