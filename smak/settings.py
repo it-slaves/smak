@@ -26,7 +26,6 @@ SECRET_KEY = '5pro&x_lf3r0#y36dmo)3eo^j=ai+^mt1jcy2mdd2&8$pilxnz'
 DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
-# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -51,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'mysite.urls'
+ROOT_URLCONF = 'smak.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +68,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+WSGI_APPLICATION = 'smak.wsgi.application'
 
 
 # Database
@@ -121,4 +124,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL ='/polls/home'
+LOGIN_REDIRECT_URL = '/polls/home'
