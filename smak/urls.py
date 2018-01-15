@@ -15,10 +15,13 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+
+from accounts.views import redirect_student
 from . import views
 
 urlpatterns = [
     url(r'^$', views.index),
-    url(r'^polls/', include('polls.urls')),
+    url(r'^dir[A-Z]{5}/', redirect_student),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
 ]
