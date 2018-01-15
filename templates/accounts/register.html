@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <p>Register page</p>
+        {% if is_director %}
+            <form method="post" action="{% url 'register_director' %}">
+        {% else %}
+            <form method="post" action="{% url 'register_student' %}">
+        {% endif %}
+            {% csrf_token %}
+            {% if form.errors %}
+                <p>{{ form.errors }}</p>
+            {% endif %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <div class="center-wrapper">
+                <div>
+                    <input type="submit" class="btn btn-primary btn-sm" value="Зарегистрироваться"/>
+                </div>
+                <input type="hidden" name="next" value="{{ next }}" />
+            </div>
+        </form>
+    {% endblock %}

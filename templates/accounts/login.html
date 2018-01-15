@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+    {% block content %}
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <div class="center-wrapper">
+                <div class="wrap float-left">
+                    <input class="btn btn-primary btn-sm" type="submit" value="Авторизоваться" />
+                </div>
+                <input type="hidden" name="next" value="{{ next }}" />
+                <a href="/accounts/register">Зарегистрироваться</a>
+            </div>
+        </form>
+    {% endblock %}
