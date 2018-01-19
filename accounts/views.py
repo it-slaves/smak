@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.crypto import get_random_string
-from django.views.decorators.csrf import csrf_protect
 from rest_framework import status
 
 from accounts.forms import DirectorRegistrationForm, StudentRegistrationForm
@@ -14,9 +13,8 @@ from accounts.models import Director
 
 @login_required(login_url='/login/')
 def profile(request):
-    # data = {'link': request.user.get_director().link}
-    # return render(request, 'accounts/profile.html', {'director': data})
-    return render(request, 'accounts/profile.html')
+    data = {'link': request.user.get_director().link}
+    return render(request, 'accounts/profile.html', {'director': data})
 
 
 def register_director(request):
@@ -36,10 +34,11 @@ def register_director(request):
     return render(request, 'accounts/register.html', {'form': form, 'is_director': True})
 
 
-def register_student(request):
-    director_id = request.session['director_id']
+def register_student(request, director_id):
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
+        print(form)
+        print(director_id)
         if form.is_valid():
             student = form.save()
             try:
@@ -59,5 +58,6 @@ def register_student(request):
 
 def redirect_student(request):
     director_link = request.path.replace('/', '')
-    request.session['director_id'] = Director.objects.get(link=director_link).id
-    return redirect(register_student)
+    director = Director.objects.get(link=director_link)
+    director_id = director.id
+    return redirect(register_student, director_id=director_id)
