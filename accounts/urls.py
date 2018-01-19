@@ -10,5 +10,5 @@ urlpatterns = [
     url(r'^logout/', logout, {'next_page': '/'}),
     url(r'^profile/', profile, name='profile'),
     url(r'^register_director/', register_director, name='register_director'),
-    url(r'^register_student/(?P<director_id>\d*)?', register_student, name='register_student'),
+    url(r'^register_student/', register_student, name='register_student'),
 ]

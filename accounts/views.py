@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.crypto import get_random_string
-from rest_framework import status
 
 from accounts.forms import DirectorRegistrationForm, StudentRegistrationForm
 from accounts.models import Director
@@ -13,8 +12,9 @@ from accounts.models import Director
 
 @login_required(login_url='/login/')
 def profile(request):
-    data = {'link': request.user.get_director().link}
-    return render(request, 'accounts/profile.html', {'director': data})
+    # data = {'link': request.user.get_director().link}
+    # return render(request, 'accounts/profile.html', {'director': data})
+    return render(request, 'accounts/profile.html')
 
 
 def register_director(request):
@@ -34,15 +34,15 @@ def register_director(request):
     return render(request, 'accounts/register.html', {'form': form, 'is_director': True})
 
 
-def register_student(request, director_id):
+def register_student(request):
+    director_id = request.session['director_id']
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
-        print(form)
-        print(director_id)
         if form.is_valid():
             student = form.save()
             try:
                 student.school_director = Director.objects.get(pk=director_id)
+                student.save()
             except Director.DoesNotExist:
                 # TODO: show error to HTML form
                 print('Director does not exists')
@@ -58,6 +58,5 @@ def register_student(request, director_id):
 
 def redirect_student(request):
     director_link = request.path.replace('/', '')
-    director = Director.objects.get(link=director_link)
-    director_id = director.id
-    return redirect(register_student, director_id=director_id)
+    request.session['director_id'] = Director.objects.get(link=director_link).id
+    return redirect(register_student)
