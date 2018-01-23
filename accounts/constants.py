@@ -7,7 +7,7 @@ SUBJECTS = (
     ('ENGLISH', 'Английский')
 )
 
-ANSWERS = (
+SCALE_ANSWERS = (
     (1, '1'),
     (2, '2'),
     (3, '3'),

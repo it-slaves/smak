@@ -13,7 +13,7 @@
                     <input class="btn btn-primary btn-sm" type="submit" value="Авторизоваться" />
                 </div>
                 <input type="hidden" name="next" value="{{ next }}" />
-                <a href="/accounts/register">Зарегистрироваться</a>
+                <a href="{% url 'register_director' %}">Зарегистрироваться</a>
             </div>
         </form>
     {% endblock %}

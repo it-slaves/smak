@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^dir[A-Z]{5}/', redirect_student),
     url(r'^accounts/', include('accounts.urls')),
+    url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]

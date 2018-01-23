@@ -50,7 +50,7 @@ class DirectorRegistrationForm(UserRegistrationForm):
 
     class Meta:
         model = Director
-        fields = ('first_name', 'last_name', 'patronymic', 'username', 'password1', 'password2')
+        fields = ('last_name', 'first_name', 'patronymic', 'username', 'password1', 'password2')
 
 
 class StudentRegistrationForm(UserRegistrationForm):
@@ -66,7 +66,7 @@ class StudentRegistrationForm(UserRegistrationForm):
 
     class Meta:
         model = Student
-        fields = ('first_name', 'last_name', 'patronymic', 'username', 'password1', 'password2',)
+        fields = ('last_name', 'first_name', 'patronymic', 'username', 'password1', 'password2',)
 
     def save(self, commit=True):
         student = super().save(commit=False)
