@@ -51,12 +51,11 @@ class Student(User):
         default=11,
         help_text=_('Students grade in school')
     )
-    polls = models.ForeignKey(
+    polls = models.ManyToManyField(
         'polls.Poll',
         blank=True,
         null=True,
         help_text=_('Polls to answer'),
-        on_delete=models.DO_NOTHING
     )
     patronymic = models.CharField(
         max_length=30,

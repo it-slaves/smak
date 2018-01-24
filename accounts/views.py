@@ -8,12 +8,11 @@ from django.utils.crypto import get_random_string
 
 from accounts.forms import DirectorRegistrationForm, StudentRegistrationForm
 from accounts.models import Director
+from polls.models import Poll
 
 
 @login_required(login_url='/login/')
 def profile(request):
-    # data = {'link': request.user.get_director().link}
-    # return render(request, 'accounts/profile.html', {'director': data})
     return render(request, 'accounts/profile.html')
 
 
@@ -42,6 +41,8 @@ def register_student(request):
             student = form.save()
             try:
                 student.school_director = Director.objects.get(pk=director_id)
+                for poll in Poll.objects.all():
+                    student.polls.add(poll)
                 student.save()
             except Director.DoesNotExist:
                 # TODO: show error to HTML form
