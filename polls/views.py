@@ -5,11 +5,15 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 
 from accounts.models import Student
-from .models import Poll, Question, ScaleAnswer, TextAnswer
+from polls.models import Poll, Question, ScaleAnswer, TextAnswer
 
 
 @api_view(['GET'])
 def get_polls(request):
+    """
+    API method
+    Returns all polls stored in database that student didn't answer
+    """
     # TODO: change student id by taking it from request.user
     student = Student.objects.get(pk=3)
     polls = []
@@ -28,6 +32,11 @@ def get_polls(request):
 
 @api_view(['POST'])
 def submit_answers(request):
+    """
+    API method
+    Receives student submitted answers and stores them in database
+    Removes answered polls from student polls list
+    """
     # TODO: change student id by taking it from request.user
     student = Student.objects.get(pk=3)
     polls = json.loads(request.body)['polls']

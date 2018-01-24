@@ -2,7 +2,7 @@ from django.conf.urls import url
 from django.contrib.auth.views import login, logout
 
 from accounts.forms import UserAuthenticationForm
-from .views import register_director, register_student, profile, redirect_student
+from accounts.views import register_director, register_student, profile
 
 urlpatterns = [
     url(r'^$', login, {'template_name': 'accounts/login.html',

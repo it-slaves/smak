@@ -17,6 +17,11 @@ def profile(request):
 
 
 def register_director(request):
+    """
+    Register director view
+    Renders registration form or creates new director object and redirect to his profile
+    Creates directors special (unique) link for students to register to refer to this director. Pattern: dir + [A-Z]{5}
+    """
     if request.method == 'POST':
         form = DirectorRegistrationForm(request.POST)
         if form.is_valid():
@@ -34,6 +39,13 @@ def register_director(request):
 
 
 def register_student(request):
+    """
+    Register student view
+    Precondition: directors id must be stored in session
+    Renders registration form or creates new student object and redirect to his profile
+    Associates student with director with id stored in session
+    Adds all existed polls from database to students polls list
+    """
     director_id = request.session['director_id']
     if request.method == 'POST':
         form = StudentRegistrationForm(request.POST)
@@ -58,6 +70,10 @@ def register_student(request):
 
 
 def redirect_student(request):
+    """
+    Redirects student from pattern link /dir + [A-Z]{5} to registration view
+    Depend on directors link stores director id in session
+    """
     director_link = request.path.replace('/', '')
     request.session['director_id'] = Director.objects.get(link=director_link).id
     return redirect(register_student)

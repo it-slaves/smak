@@ -7,6 +7,9 @@ SUBJECTS = (
     ('ENGLISH', 'Английский')
 )
 
+"""
+Possible answers for ScaleAnswer model
+"""
 SCALE_ANSWERS = (
     (1, '1'),
     (2, '2'),

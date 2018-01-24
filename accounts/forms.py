@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.utils.translation import ugettext_lazy as _
 
 from accounts.constants import GRADES
-from .models import Director, Student
+from accounts.models import Director, Student
 
 
 class UserRegistrationForm(UserCreationForm):
